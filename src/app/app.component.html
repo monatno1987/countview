@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to Test
+  </h1>
+</div>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" (ngSubmit)="onSubmit(angForm.value)" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Senetence</label>
+        <textarea type="text" class="form-control" formControlName="sentence" required>
+        </textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit"
+                [disabled]="angForm.pristine || angForm.invalid"
+                class="btn btn-primary">Validate</button>
+      </div>
+    </form>
+  </div>
+</div>
+  <div class="card-body table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Sentence</th>
+        <th>Result</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let re of results">
+        <th > {{re.wordss}}</th>
+        <th > {{re.numberwords}}</th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+<router-outlet></router-outlet>
